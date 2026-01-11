@@ -28,7 +28,9 @@ const home = (req, res) => {
         res.write('</body>');
         res.write('</html>');
         return res.end();
-    } else if (req.url === '/calculate' && req.method === 'POST') {
+    } else if (req.url.toLowerCase() === '/calculate' && req.method === 'POST') {
+        return sumRequestHandler(req, res);
+        
 
     }
 };
